@@ -8,14 +8,27 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    int currentValue;
+}
+
+- (IBAction)slideMoved:(UISlider*)sender;
+
+- (IBAction)showAlert:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UISlider *slider;
 
 @end
 
 @implementation ViewController
 
+@synthesize slider;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    currentValue = self.slider.value;
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -23,9 +36,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)slideMoved:(UISlider*)sender {
+    currentValue = (int)lroundf(slider.value);
+    // NSLog(@"当前值为%f", slider.value);
+}
 
 - (IBAction)showAlert:(id)sender {
-    [[[UIAlertView alloc]initWithTitle:@"您好，苍老师" message:@"听说您的新贴转发了499次" delegate:nil cancelButtonTitle:@"我来帮转1次，你懂的" otherButtonTitles:nil, nil]show];
+    NSString *message = [NSString stringWithFormat:@"滑动条当前数值为%d",currentValue];
+    [[[UIAlertView alloc]initWithTitle:@"您好" message:message delegate:nil cancelButtonTitle:@"Hello" otherButtonTitles:nil, nil]show];
 }
 
 @end
