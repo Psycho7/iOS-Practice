@@ -10,7 +10,10 @@
 
 @interface ViewController () {
     int currentValue;
+    int targetValue;
 }
+
+@property (strong, nonatomic) IBOutlet UILabel *targetLabel;
 
 - (IBAction)slideMoved:(UISlider*)sender;
 
@@ -24,11 +27,13 @@
 
 @synthesize slider;
 
+@synthesize targetLabel;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    currentValue = self.slider.value;
-    
+    [self startNewRound];
+    [self updateLabels];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -42,8 +47,21 @@
 }
 
 - (IBAction)showAlert:(id)sender {
-    NSString *message = [NSString stringWithFormat:@"滑动条当前数值为%d",currentValue];
+    int difference = abs(targetValue - currentValue);
+    NSString *message = [NSString stringWithFormat:@"滑动条当前数值为%d，我们的目标是%d，差值为%d",currentValue,targetValue,difference];
     [[[UIAlertView alloc]initWithTitle:@"您好" message:message delegate:nil cancelButtonTitle:@"Hello" otherButtonTitles:nil, nil]show];
+    [self startNewRound];
+    [self updateLabels];
+}
+
+- (void)updateLabels {
+    self.targetLabel.text = [NSString stringWithFormat:@"%d",targetValue];
+}
+
+- (void)startNewRound {
+    targetValue = 1 + (arc4random() % 100);
+    currentValue = 50;
+    self.slider.value = currentValue;
 }
 
 @end
