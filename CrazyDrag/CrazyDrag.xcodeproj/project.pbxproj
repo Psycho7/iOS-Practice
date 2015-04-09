@@ -14,6 +14,8 @@
 		470C938B1AD2E4220035FF40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470C93891AD2E4220035FF40 /* LaunchScreen.xib */; };
 		470C93971AD2E4220035FF40 /* CrazyDragTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 470C93961AD2E4220035FF40 /* CrazyDragTests.m */; };
 		470C93A01AD2E9CF0035FF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 470C93841AD2E4220035FF40 /* Main.storyboard */; };
+		4769341D1AD6DE9400EF3B6E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4769341B1AD6DE9400EF3B6E /* AboutViewController.m */; };
+		4769341E1AD6DE9400EF3B6E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4769341C1AD6DE9400EF3B6E /* AboutViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		470C93901AD2E4220035FF40 /* CrazyDragTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrazyDragTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		470C93951AD2E4220035FF40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		470C93961AD2E4220035FF40 /* CrazyDragTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrazyDragTests.m; sourceTree = "<group>"; };
+		4769341A1AD6DE9400EF3B6E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4769341B1AD6DE9400EF3B6E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		4769341C1AD6DE9400EF3B6E /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,9 @@
 				470C93871AD2E4220035FF40 /* Images.xcassets */,
 				470C93891AD2E4220035FF40 /* LaunchScreen.xib */,
 				470C937A1AD2E4220035FF40 /* Supporting Files */,
+				4769341A1AD6DE9400EF3B6E /* AboutViewController.h */,
+				4769341B1AD6DE9400EF3B6E /* AboutViewController.m */,
+				4769341C1AD6DE9400EF3B6E /* AboutViewController.xib */,
 			);
 			path = CrazyDrag;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			files = (
 				470C93A01AD2E9CF0035FF40 /* Main.storyboard in Resources */,
 				470C938B1AD2E4220035FF40 /* LaunchScreen.xib in Resources */,
+				4769341E1AD6DE9400EF3B6E /* AboutViewController.xib in Resources */,
 				470C93881AD2E4220035FF40 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +230,7 @@
 			files = (
 				470C93831AD2E4220035FF40 /* ViewController.m in Sources */,
 				470C93801AD2E4220035FF40 /* AppDelegate.m in Sources */,
+				4769341D1AD6DE9400EF3B6E /* AboutViewController.m in Sources */,
 				470C937D1AD2E4220035FF40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

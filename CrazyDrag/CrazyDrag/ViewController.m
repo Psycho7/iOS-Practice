@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "AboutViewController.h"
 
 @interface ViewController () {
     int currentValue;
     int targetValue;
+    int score;
+    int round;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *targetLabel;
@@ -20,18 +23,21 @@
 - (IBAction)showAlert:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UILabel *roundLabel;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
 @implementation ViewController
 
 @synthesize slider;
-
 @synthesize targetLabel;
+@synthesize scoreLabel;
+@synthesize roundLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    round = 0;
     [self startNewRound];
     [self updateLabels];
     // Do any additional setup after loading the view, typically from a nib.
@@ -48,20 +54,56 @@
 
 - (IBAction)showAlert:(id)sender {
     int difference = abs(targetValue - currentValue);
+    int point = 100 - difference;
+    score += point;
+    NSString *title = nil;
+    if (difference == 0) {
+        title = @"完美！";
+    }
+    else if (difference < 15) {
+        title = @"还不错！";
+    }
+    else {
+        title = @"再接再厉:)";
+    }
+    
     NSString *message = [NSString stringWithFormat:@"滑动条当前数值为%d，我们的目标是%d，差值为%d",currentValue,targetValue,difference];
-    [[[UIAlertView alloc]initWithTitle:@"您好" message:message delegate:nil cancelButtonTitle:@"Hello" otherButtonTitles:nil, nil]show];
-    [self startNewRound];
+    [[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Hello" otherButtonTitles:nil, nil]show];
+}
+
+- (IBAction)startOver:(id)sender {
+    [self startNewGame];
     [self updateLabels];
+}
+
+- (void)startNewGame {
+    round = 0;
+    score = 0;
+    [self startNewRound];
+}
+
+- (IBAction)startInfo:(id)sender {
+    AboutViewController *controller = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)updateLabels {
     self.targetLabel.text = [NSString stringWithFormat:@"%d",targetValue];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", score];
+    self.roundLabel.text = [NSString stringWithFormat:@"%d", round];
 }
 
 - (void)startNewRound {
+    round++;
     targetValue = 1 + (arc4random() % 100);
     currentValue = 50;
     self.slider.value = currentValue;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self startNewRound];
+    [self updateLabels];
 }
 
 @end
