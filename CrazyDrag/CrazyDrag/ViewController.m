@@ -37,7 +37,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    round = 0;
+    
+    UIImage *thumbImageNormal = [UIImage imageNamed:@"SliderThumb-Normal"];
+    [self.slider setThumbImage:thumbImageNormal forState:UIControlStateNormal];
+    UIImage *thumbImageHighlight = [UIImage imageNamed:@"SliderThumb-Highlighted"];
+    [self.slider setThumbImage:thumbImageHighlight forState:UIControlStateHighlighted];
+    UIImage *trackLeft = [[UIImage imageNamed:@"SliderTrackLeft"] stretchableImageWithLeftCapWidth:14 topCapHeight:0];
+    [self.slider setMinimumTrackImage:trackLeft forState:UIControlStateNormal];
+    UIImage *trackRight = [[UIImage imageNamed:@"SliderTrackRight"] stretchableImageWithLeftCapWidth:14 topCapHeight:0];
+    [self.slider setMaximumTrackImage:trackRight forState:UIControlStateNormal];
+    
     [self startNewRound];
     [self updateLabels];
     // Do any additional setup after loading the view, typically from a nib.
@@ -72,8 +81,15 @@
 }
 
 - (IBAction)startOver:(id)sender {
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    transition.duration = 1;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
     [self startNewGame];
     [self updateLabels];
+    
+    [self.view.layer addAnimation:transition forKey:nil];
 }
 
 - (void)startNewGame {
