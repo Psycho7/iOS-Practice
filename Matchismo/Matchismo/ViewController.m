@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Deck.h"
-#import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
 
 @interface ViewController ()
@@ -65,8 +63,9 @@
     [self updateUI];
 }
 
+// Abstrack Method
 - (Deck *)createDeck {
-    return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 

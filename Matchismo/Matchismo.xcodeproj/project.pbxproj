@@ -19,6 +19,7 @@
 		4761862E1ADA4E5900ACC427 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4761862D1ADA4E5900ACC427 /* PlayingCard.m */; };
 		476186311ADA545100ACC427 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 476186301ADA545100ACC427 /* PlayingCardDeck.m */; };
 		477DAFE81AE17A3B00B331F0 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 477DAFE71AE17A3B00B331F0 /* CardMatchingGame.m */; };
+		477DAFEB1AE3D29100B331F0 /* PlayingCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477DAFEA1AE3D29100B331F0 /* PlayingCardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		476186301ADA545100ACC427 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
 		477DAFE61AE17A3B00B331F0 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
 		477DAFE71AE17A3B00B331F0 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		477DAFE91AE3D29100B331F0 /* PlayingCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardViewController.h; sourceTree = "<group>"; };
+		477DAFEA1AE3D29100B331F0 /* PlayingCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 			children = (
 				476186061AD9855000ACC427 /* ViewController.h */,
 				476186071AD9855000ACC427 /* ViewController.m */,
+				477DAFE91AE3D29100B331F0 /* PlayingCardViewController.h */,
+				477DAFEA1AE3D29100B331F0 /* PlayingCardViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			files = (
 				4761862E1ADA4E5900ACC427 /* PlayingCard.m in Sources */,
 				4761862B1ADA46F300ACC427 /* Deck.m in Sources */,
+				477DAFEB1AE3D29100B331F0 /* PlayingCardViewController.m in Sources */,
 				476186021AD9855000ACC427 /* AppDelegate.m in Sources */,
 				476186081AD9855000ACC427 /* ViewController.m in Sources */,
 				477DAFE81AE17A3B00B331F0 /* CardMatchingGame.m in Sources */,
